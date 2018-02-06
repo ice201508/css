@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.header {
+			position: fixed;
+			top: 0;
+			/*left: 50px;*/
+			width: 100%;
+			height: 50px;
+			background-color: #666666;
+			z-index: 5;
+		}
+		.main {
+			position: absolute;
+			top: 50px;
+			bottom: 50px;
+			/*left: 50px;*/
+			width: 100%;
+			overflow: auto;
+			background-color: #99CC99;
+			z-index: 10;
+		}
+		.footer {
+			position: fixed;
+			bottom: 0;
+			/*left: 50px;*/
+			width: 100%;
+			height: 50px;
+			background-color: #666666;
+			z-index: 20;
+		}
+		.content {
+			padding: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="main">
+		<div class="content">1</div>
+		<div class="content">1</div>
+		<div class="content">1</div>
+		<div class="content">1</div>
+		<div class="content">1</div>
+		<div class="content">1</div>
+		<div class="content">1</div>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>
