@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="description" content="圣杯布局的纯浮动显示,position显示">
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		.wrap:after {
+			clear: both;
+			content: " ";
+			display: content;
+		}
+		.layout__aside-left {
+			float: left;
+			width: 200px;
+			background-color: #CC9933;
+		}
+		.layout__aside-right {
+			float: right;
+			width: 200px;
+			background-color: #4DBCB0;
+		}
+		.layout__main {
+			margin: 0 210px;
+			background-color: #009966;
+		}
+
+		/* position实现三栏布局 */
+		.p__wrap {
+			position: relative;
+		}
+		.p-left {
+			width: 200px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #CC9933;
+		}
+		.p-right {
+			width: 200px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: #4DBCB0;
+		}
+		.p-middle {
+			position: absolute;
+			top: 0;
+			left: 210px;
+			right: 210px;
+			background-color: #009966;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="layout__aside-left">左侧固定宽度</div>
+		<div class="layout__aside-right">右侧固定宽度</div>
+		<div class="layout__main">主内容栏固定宽度</div>
+	</div>
+
+	<hr>
+	<h2>三栏布局借助position实现</h2>
+	<div class="p__wrap">
+		<div class="p-left">左</div>
+		<div class="p-middle">中</div>
+		<div class="p-right">右</div>
+	</div>
+</body>
+</html>

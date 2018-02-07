@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="description" content="始终将main主体内容放在前面显示">
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		.layout__main-wrapper {
+			width: 100%;
+			height: 100%;
+			float: left;
+		}
+		.layout__main {
+			height: 100%;
+			margin: 0 210px;
+			background-color: #CC9933;
+		}
+		.layout__aside-left {
+			height: 100%;
+			float: left;
+			width: 200px;
+			margin-left: -100%;
+			background-color: #009966;
+		}
+		.layout__aside-right {
+			height: 100%;
+			float: left;
+			width: 200px;
+			position: relative;
+			margin-left: -200px;
+			background-color: #4DBCB0;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout__main-wrapper">
+		<div class="layout__main">主内容栏宽度自适应</div>
+	</div>
+	<div class="layout__aside-left">左侧边栏宽度固定</div>
+	<div class="layout__aside-right">右侧边栏宽度固定</div>
+</body>
+</html>
