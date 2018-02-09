@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		.layout:after {
+			content: " ";
+			clear: both;
+			display: table;
+		}
+		.layout {
+			width: 100%;
+			float: left;
+		}
+		.main {
+			margin-left: 75px;
+			background-color: #97765E
+		}
+		.sidebar {
+			width: 75px;
+			height: 100%;
+			float: left;
+			margin-left: -100%;
+			background-color: #B19B75;
+		}
+		.sidebar:hover {
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<div class="main">main</div>
+	</div>
+	<div class="sidebar">sidebar</div>
+</body>
+</html>

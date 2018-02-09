@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.layout {
+			position: relative;
+			height: 100%;
+		}
+		.main {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 70px;
+			right: 0;
+			background-color: #97765E;
+		}
+		.header {
+			height: 50px;
+			position: relative;
+		}
+		.content {
+			position: absolute;
+			top: 50px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #CCFFFF;
+		}
+		.content.side-detail-show{
+			left: 150px;
+		}
+
+		.sidebar {
+			/*position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 70px;*/
+		}
+
+		.side-icon {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 70px;
+			background-color: #B19B75;
+		}
+		.side-detail {
+			display: none;
+			position: absolute;
+			top: 50px;
+			bottom: 0;
+			left: 70px;
+			width: 150px;
+			background-color: #009966;
+		}
+		.side-detail.side-detail-show {
+			display: block;
+		}
+		.side-detail ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		.side-detail ul li {
+			text-align: center;
+			padding: 10px;
+		}
+
+		.sidebar.side-hover, .side-icon.side-hover {
+			width: 100px;
+		}
+		.main.side-hover, .side-detail.side-hover {
+			left: 100px;
+		}
+
+		.side-icon ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		.side-icon ul li {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="layout">
+	<div class="main" [ngClass]="{'side-hover':sideHover}">
+		<div class="header">header</div>
+		<div class="content" [ngClass]="{'side-detail-show':showSideDetail}">
+			content
+		</div>
+	</div>
+	<div class="sidebar" [ngClass]="{'side-hover':sideHover}">
+		<div class="side-icon" [ngClass]="{'side-hover':sideHover}" (mouseover)="sideHover = true" (mouseout)="mouseout()">
+			<ul>
+				<li>
+					<button (click)="toggle()">菜单</button>
+					<button (click)="toggle()">菜单</button>
+					<button (click)="toggle()">菜单</button>
+				</li>
+			</ul>
+		</div>
+		<div class="side-detail" [ngClass]="{'side-detail-show':showSideDetail, 'side-hover':sideHover}">
+			<ul>
+				<li>
+					<button>二级菜单</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
