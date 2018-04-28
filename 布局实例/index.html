@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.big-height {
+			width: 100%;
+			height: 1200px;
+			background-color: #BF7878;
+		}
+	</style>
+	<!-- <style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.layout {
+			position: relative;
+			height: 100%;
+		}
+		.main {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 100px;
+			right: 0;
+			height: 100%;
+		}
+		.sidebar {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100px;
+			background-color: #E6C697;
+		}
+	</style> -->
+	<!-- <style>
+		.layout:after {
+			overflow: hidden;
+		}
+		.layout {
+			height: 100%;
+			padding-left: 100px;
+		}
+		.sidebar {
+			height: 100%;
+			float:left;
+			width: 100px;
+			background-color: #F2BDBD;
+			margin-left: -100px;
+		}
+
+		.main {
+			float:left;
+			width: 100%;
+			height: 100%;
+			background-color: #B77171;
+		}
+	</style> -->
+	<style>
+		.layout {
+			display: -webkit-flex;
+			display: flex;
+			flex-direction: row;
+		}
+		.sidebar {
+			flex: 0 0 100px;
+			height: 100%;
+			background-color: #E5B0B0;
+		}
+		.main {
+			flex: 0 0 auto;
+			height: 100%;
+			background-color: #B77171;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="layout">
+		<div class="main">
+			<div class="big-height">adfads</div>
+		</div>
+		<div class="sidebar"></div>
+	</div> -->
+	<!-- <div class="layout">
+		<div class="sidebar">1</div>
+		<div class="main">
+			<div class="big-height">adfads</div>
+		</div>
+	</div> -->
+	<div class="layout">
+		<div class="sidebar"></div>
+		<div class="main"></div>
+	</div>
+</body>
+</html>
