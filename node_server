@@ -1,0 +1,75 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+var proList = [
+	{ img: 'http://oopbykx1v.bkt.clouddn.com/cookies.png', name: '面包1', note: '面包简介1', price: '4.99',time: '2018-06-10', pid:'1', ppid: '10001'},
+	{ img: 'http://oopbykx1v.bkt.clouddn.com/cookies.png', name: '面包2', note: '面包简介2', price: '4.99',time: '2018-06-10', pid:'1', ppid: '10001'},
+	{ img: 'http://oopbykx1v.bkt.clouddn.com/cookies.png', name: '面包3', note: '面包简介3', price: '4.99',time: '2018-06-10', pid:'1', ppid: '10001'},
+	{ img: 'http://oopbykx1v.bkt.clouddn.com/cookies.png', name: '面包4', note: '面包简介4', price: '4.99',time: '2018-06-10', pid:'1', ppid: '10001'},
+	{ img: 'http://oopbykx1v.bkt.clouddn.com/cookies.png', name: '面包5', note: '面包简介5', price: '4.99',time: '2018-06-10', pid:'1', ppid: '10001'},
+];
+
+app.get('/api/foods/list', function(req, res) {
+	res.send({
+		code: 200,
+		data: proList,
+		totalNum: 20
+	});
+});
+
+var userList = [
+	{ name: '小明1', createtime: '2018-06-10', tel: '13666666666', city: '北京', postcode:'100001', addr: '北京五道口'},
+	{ name: '小明2', createtime: '2018-06-10', tel: '13666666666', city: '北京', postcode:'100001', addr: '北京五道口'},
+	{ name: '小明3', createtime: '2018-06-10', tel: '13666666666', city: '北京', postcode:'100001', addr: '北京五道口'},
+	{ name: '小明4', createtime: '2018-06-10', tel: '13666666666', city: '北京', postcode:'100001', addr: '北京五道口'},
+	{ name: '小明5', createtime: '2018-06-10', tel: '13666666666', city: '北京', postcode:'100001', addr: '北京五道口'},
+	{ name: '小明5', createtime: '2018-06-10', tel: '13666666666', city: '北京', postcode:'100001', addr: '北京五道口'},
+];
+app.get('/client/info/list', function(req, res) {
+	res.send({
+		code: 200,
+		data: userList,
+		totalNum: 20
+	});
+});
+
+app.post('/login/checkLogin', function(req, res){
+	res.send({
+		code: 200,
+		msg: 'success',
+	});
+})
+
+var typeList = [
+	{
+		"label": "果干",
+		"level": '1',
+		"id": 1,
+		"children": [
+			{ "id": 10000, "label": "芒果干", "level": '2', "icon": "fa fa-file-text", "data": "f6" },
+			{ "id": 10001, "label": "香蕉干", "level": '2',"icon": "fa fa-file-text", "data": "f7" },
+			{ "id": 10002, "label": "葡萄干", "level": '2',"icon": "fa fa-file-text", "data": "f8" }]
+	},
+	{
+		"label": "水果",
+		"level": '1',
+		"id": 2,
+		"children": [
+			{ "id": 10003, "label": "芒果", "level": '2', "icon": "fa fa-file-text", "data": "f6" },
+			{ "id": 10004, "label": "香蕉", "level": '2',"icon": "fa fa-file-text", "data": "f7" },
+			{ "id": 10005, "label": "葡萄", "level": '2',"icon": "fa fa-file-text", "data": "f8" }]
+	}
+];
+
+app.get('/api/foodstype/list', function(req, res){
+	res.send({
+		code: 200,
+		data: typeList
+	});
+})
+
+app.listen(8090);
