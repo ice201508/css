@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首尾固定，中间自适应， position和flex两种方法</title>
+</head>
+<style>
+	html, body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.head {
+		height: 50px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #B77777;
+	}
+	.main {
+		position: absolute;
+		top: 50px;
+		bottom: 50px;
+		width: 100%;
+		background-color: #E0E0E0;
+		overflow: auto;
+	}
+	.footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background-color: #B77777;
+	}
+
+	/*-------------------------------flex布局, 简便---------------*/
+	.wrap--1 {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	.head--1 {
+		flex: 0 0 50px;
+		background-color: #B77777;
+	}
+	.main--1 {
+		flex: 1 1 auto;  /*1 1 表示可以扩大， 可以缩小*/
+		overflow: auto;
+		background-color: #E0E0B0;
+	}
+	.foot--1 {
+		flex: 0 0 50px;
+		background-color: #B77777;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<div class="head"></div>
+		<div class="main">
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+
+	<!-- <div class="wrap--1">
+		<div class="head--1"></div>
+		<div class="main--1">
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+			<div style="height: 100px;">内部元素撑开，出现滚动条，但首尾部位置不变</div>
+		</div>
+		<div class="foot--1"></div>
+	</div> -->
+</body>
+</html>

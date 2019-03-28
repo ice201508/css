@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>左边栏和右边栏宽度固定，中间栏宽度自适应，四种方法</title>
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		/*-----------------------------传统布局 float, margin 负值------------------*/
+		.layout {
+			height: 100%;
+			padding-left: 210px;
+			padding-right: 210px;
+		}
+		.layout:after {
+			clear: both;
+			content: " ";
+			display: table;
+		}
+		.main {
+			float: left;
+			width: 100%;
+			height: 100%;
+			background-color: #E0E0B0;
+		}
+		.left{
+			float: left;
+			margin-left: -210px;
+			width: 200px;
+			height: 100%;
+			background-color: #E0B0B0;
+		}
+		.right {
+			float: right;
+			margin-right: -210px;
+			width: 200px;
+			height: 100%;
+			background-color: #B77777;
+		}
+
+		/*-------------------------------传统布局，不借助margin负值，理解浮动-------*/
+		.layout--1 {
+			width: 100%;
+			height: 100%;
+		}
+		.left--1 {
+			float: left;
+			width: 200px;
+			height: 100%;
+			background-color: #E0B0B0;
+		}
+		.main--1 {
+			margin: 0 210px;
+			height: 100%;
+			background-color: #E0E0B0;
+		}
+		.right--1 {
+			float: right;
+			width: 200px;
+			height: 100%;
+			background-color: #B77777;
+		}
+
+		/* --------------------------- 传统布局 position ----------------------------*/
+		.layout--2 {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		.left--2 {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 200px;
+			background-color: #E0B0B0;
+		}
+		.main--2 {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 210px;
+			right: 210px;
+			background-color: #E0E0B0;
+		}
+		.right--2 {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			background-color: #B77777;
+		}
+
+		/*----------------------------------flex布局， 兼容性问题----------------------*/
+		.layout--3 {
+			display: flex;
+			flex-direction: row;
+			height: 100%;
+			width: 100%;
+		}
+		.left--3 {
+			flex: 0 1 200px;
+			height: 100%;
+			margin-right: 10px;
+			background-color: #E0B0B0;
+		}
+		.main--3 {
+			flex: 1 0 auto;
+			height: 100%;
+			background-color: #E0E0B0;
+		}
+		.right--3 {
+			flex: 0 1 200px;
+			height: 100%;
+			margin-left: 10px;
+			background-color: #B77777;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<div class="left"></div>
+		<div class="main"></div>
+		<div class="right"></div>
+	</div>
+
+<!-- 这里的html结构有变化，注意main在最后面，浮动先行，不占位置 -->
+
+	<!-- <div class="layout--1">
+		<div class="left--1"></div>
+		<div class="right--1"></div>
+		<div class="main--1"></div>
+	</div> -->
+
+	<!-- <div class="layout--2">
+		<div class="left--2"></div>
+		<div class="main--2"></div>
+		<div class="right--2"></div>
+	</div> -->
+
+	<!-- <div class="layout--3">
+		<div class="left--3"></div>
+		<div class="main--3"></div>
+		<div class="right--3"></div>
+	</div> -->
+</body>
+</html>
